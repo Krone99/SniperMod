@@ -87,6 +87,8 @@ getPlayerNade()
 			self setWeaponAmmoClip( currentOffhand, 9999 );
 			self GiveMaxAmmo( currentOffhand );
 		}
+		else
+		}
 	}
 }
 
@@ -107,8 +109,36 @@ getPlayerSpecNade()
 			self giveMaxAmmo( currentOffhand );
 			self setWeaponAmmoClip( currentOffhand, 9999 );
 		}
+		else
+		}
 	}
 }
+// Toggle Refill on and off - Client based toggle.
+
+toggleRefill()
+{
+	if ( level.ExternalSettings["EnableRefillToggle"] == "True" )
+	{
+		self notifyOnPlayerCommand ( "Player_Pressed_N", "+actionslot 40" );
+			player waittill ( "Player_Pressed_N" );
+			
+	if (self.regen == true) {
+		self.regen = false;
+		self.regeneq = false;
+		self.regeneqs = false;
+		self iPrintlnBold("Ammo Refill ^1Off");
+
+	} else if (self.regen == false) {
+		self.regen = true;
+		self.regeneq = true;
+		self.regeneqs = true;
+		self iPrintlnBold("Ammo Refill ^2On");
+		}
+		else
+		}
+	}
+}
+
 
 
 
