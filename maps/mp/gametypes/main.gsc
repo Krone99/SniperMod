@@ -52,7 +52,7 @@ GetColorForPing ( ping )
 
 getPlayerReload()
 {
-	if ( level.ExternalSettings["EnableRegenToggle"] == "True" )
+	if ( level.ExternalSettings["EnableAmmoRefill"] == "True" )
 	{
 		self notifyOnPlayerCommand( "reload", "+reload", "+usereload", "usereload" );
 		self waittill( "reload", "usereload" );
