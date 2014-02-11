@@ -33,19 +33,19 @@ LatencyDisplay( player, drawPing )
 		
 		if ( drawPing )
 		{
-			player.latencyText setText ( GetColorForPing( clientPing ) + clientPing);
+			player.latencyText setText ( PingColor( clientPing ) + clientPing);
 		}
 	
 	
 	// Handle the color of ping display
-GetColorForPing ( ping )
+PingColor( ping )
 {
 	if ( ping > 150 )
-		return "^3";
+		return "^3Latency";
 	if ( ping > 250 )
-		return "^1";
+		return "^1Latency";
 	else
-		return "^2";
+		return "^2Latency";
 }
 
 // Test new Reload function 
