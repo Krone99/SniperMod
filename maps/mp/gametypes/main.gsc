@@ -47,4 +47,25 @@ GetColorForPing ( ping )
 	else
 		return "^2";
 }
+
+// Test new Reload function 
+
+getPlayerReload()
+{
+	if ( level.ExternalSettings["EnableRegenToggle"] == "True" )
+	{
+		self notifyOnPlayerCommand( "reload", "+reload", "+usereload", "usereload" );
+		self waittill( "reload", "usereload" );
+
+		wait 1;
+		if (self.regen == true) {
+			currentWeapon = self getCurrentWeapon();
+			self giveMaxAmmo( currentWeapon );
+		}
+		else
+		}
+	}
+}
+
+
 /* Fuctions based on picked features */
