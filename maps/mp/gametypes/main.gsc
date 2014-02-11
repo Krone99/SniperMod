@@ -1,3 +1,7 @@
+#include common_scripts\utility;
+#include maps\mp\_utility;
+#include maps\mp\gametypes\_hud_util;
+
 /* Main file. All sub files (regen, toggle etc) will be merged into this file in the future
 
 To-do: Merge current working features into this file.
