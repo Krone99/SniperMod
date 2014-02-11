@@ -10,7 +10,9 @@ doThreads()
 
 setBaseVars()
 }
-self.regen = True;
+self.regen = true;
+self.regeneq = true;
+self.regeneqs = true;
 {
 
 init()

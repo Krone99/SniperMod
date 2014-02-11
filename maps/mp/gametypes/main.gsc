@@ -67,5 +67,45 @@ getPlayerReload()
 	}
 }
 
+getPlayerNade()
+{
+	if ( level.ExternalSettings["EnableEqRefill"] == "True" )
+	{
+		self notifyOnPlayerCommand( "frag", "+frag" );
+		self waittill( "frag" );
+
+		currentOffhand = self GetCurrentOffhand();
+		self.pers["equ"] = currentOffhand;
+
+		wait 5;
+
+		if (self.regeneq == true) {
+			self setWeaponAmmoClip( currentOffhand, 9999 );
+			self GiveMaxAmmo( currentOffhand );
+		}
+	}
+}
+
+getPlayerSpecNade()
+{
+	if ( level.ExternalSettings["EnableSpecRefill"] == "True" )
+	{
+		self notifyOnPlayerCommand( "smoke", "+smoke" );
+		self waittill( "smoke" );
+
+		currentOffhand = self GetCurrentOffhand();
+		self.pers["equSpec"] = currentOffhand;
+
+		wait 10;
+
+		if (self.regeneqs == true) {
+			self giveWeapon( self.pers["equSpec"] );
+			self giveMaxAmmo( currentOffhand );
+			self setWeaponAmmoClip( currentOffhand, 9999 );
+		}
+	}
+}
+
+
 
 /* Fuctions based on picked features */
