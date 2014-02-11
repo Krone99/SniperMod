@@ -4,32 +4,8 @@
 
 doThreads() 
 {
-	//self thread adminStatus(); - Will be added later.
-	self thread varChecks();
-	self thread maps\mp\gametypes\_regen::doThreads();
 	self thread maps\mp\gametypes\_restrictions::doThreads();
-	//self thread maps\mp\gametypes\_admin::doThreads();
-	//self thread maps\mp\gametypes\_lastchange::doThreads();
-	//self thread maps\mp\gametypes\_toggle::doThreads();
 }
-
-varChecks()
-{
-self.admin = false;
-self.regen = true;
-self.regeneq = true;
-self.regeneqs = true;
-self.classchange = true;
-}
-
-adminStatus() // Still being worked on
-{
-if (self isHost() || self.guid == "guid" && self.playername == "name")
-   self.admin = true;
-else
-   self.admin = false;
-}
-
 init()
 {
 
