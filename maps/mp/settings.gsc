@@ -1,4 +1,4 @@
-Loadettings()
+LoadSettings()
 {
 	
 	LocalSettings = [];
