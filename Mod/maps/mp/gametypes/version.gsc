@@ -12,7 +12,7 @@ modVersion();
 modVersion()
 {
 ModVersion = 1;
-ModVersionMinor = 0;
-ModStatus = Alpha;
+ModVersionMinor = 2;
+ModStatus = Pre-Alpha;
 level.Version = " v" + ModVersion + "." + ModVersionMinor + " " + ModStatus;
 }
