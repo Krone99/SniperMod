@@ -5,15 +5,7 @@
 doThreads() 
 {
 	self thread maps\mp\gametypes\_restrictions::doThreads();
-	self thread setBaseVars();
 }
-
-setBaseVars()
-}
-self.regen = true;
-self.regeneq = true;
-self.regeneqs = true;
-{
 
 init()
 {
