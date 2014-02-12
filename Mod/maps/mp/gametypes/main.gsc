@@ -11,7 +11,7 @@ Add new features further protections and advanced features for server hosts.
 */
 init()
 {	
-	//level thread onPlayerConnect();
+	level thread onPlayerConnect();
 	level.ExternalSettings = maps\mp\settings::LoadSettings();
 }
 
@@ -39,9 +39,9 @@ onPlayerSpawned()
 
 EachPlayerSpawnEvent()
 {
-	if ( level.ExternalSettings["SpawnMessage"] == "true" )
-	{
-	self iPrintLN(level.ExternalSettings["SpawnMessageText"]);
+		if ( level.ExternalSettings["SpawnMessage"] == "true" )
+		{
+		self iPrintLN(level.ExternalSettings["SpawnMessageText"]);
 		}
 		else
 		{
@@ -68,6 +68,13 @@ LatencyDisplay( player, drawPing )
 	player.latencyText.hidewheninmenu 		= true;
 	player.latencyText.alpha				= 0.75;
 	
+	player.FullbrightText = createFontString( "objective", 1.25 );
+	player.FullbrightText setPoint( "TOPRIGHT", "TOPRIGHT", -3, 20);
+	player.FullbrightText .sort 				= 1;
+	player.FullbrightText .foreground 			= false;
+	player.FullbrightText .hidewheninmenu 		= true;
+	player.FullbrightText .alpha				= 0.75;
+	
 	// Set the text to be displayed and check function is "Switched on"
 	while( true )
 	{
@@ -77,18 +84,32 @@ LatencyDisplay( player, drawPing )
 		{
 			player.latencyText setText( PingColor( clientPing ) + clientPing);
 		}
+		
+		if ( level.ExternalGameSettings["EnableFrameRateIncrease"] )	
+		{	
+			if ( !player.pers["fullbright"] )
+			{
+				player.FullbrightText setText( "^1Fullbright: OFF" );
+			}
+			
+			else
+			{
+				player.FullbrightText setText( "^2Fullbright: ON" );
+			}
+		}
+		wait ( 1 );	
 	}
 }
 	
-	// Handle the color of ping display
+// Handle the color of ping display
 PingColor( ping )
 {
 	if ( ping > 250 )
-		return "^1Latency";
+		return "^1Latency: ";
 	if ( ping > 150 )
-		return "^3Latency";
+		return "^3Latency: ";
 	else
-		return "^2Latency";
+		return "^2Latency: ";
 }
 
 // Test new Reload function 
