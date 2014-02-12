@@ -11,8 +11,39 @@ Add new features further protections and advanced features for server hosts.
 */
 init()
 {	
-	// Placeholder
+	level thread onPlayerConnect();
 }
+
+onPlayerConnect()
+{
+	for(;;)
+	{
+		level waittill( "connected", player );
+		player thread onPlayerSpawned();
+		thread LatencyDisplay( player, level.ExternalGameSettings["EnableLatencyMonitor"] );	// Since in lengthy 1 round gametypes, not all players are here for round start!
+	}
+}
+
+onPlayerSpawned()
+{
+	self endon("disconnect");
+	
+	for(;;)
+	{
+		self waittill("spawned_player");
+		EachPlayerSpawnEvent();
+	}
+}
+
+EachPlayerSpawnEvent()
+{
+	if ( level.ExternalSettings["SpawnMessage"] == "True" )
+	self iPrintLN(level.ExternalGameSettings["SpawnMessageText"]);
+	}
+}
+
+
+
 
 /* Server checks & features based off a _settings file */
 
