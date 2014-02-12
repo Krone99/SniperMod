@@ -38,7 +38,7 @@ LoadSettings()
 	self.regeneqs = true;
 	*/
 
-	self.classchange = true;
+	//self.classchange = true;
 	
 	return LocalSettings;
 }

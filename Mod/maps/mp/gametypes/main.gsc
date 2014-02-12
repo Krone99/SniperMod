@@ -11,8 +11,10 @@ Add new features further protections and advanced features for server hosts.
 */
 init()
 {	
-	level thread onPlayerConnect();
+	//level thread onPlayerConnect();
+	level.ExternalSettings = maps\mp\settings::LoadSettings();
 }
+
 
 onPlayerConnect()
 {
@@ -20,7 +22,7 @@ onPlayerConnect()
 	{
 		level waittill( "connected", player );
 		player thread onPlayerSpawned();
-		thread LatencyDisplay( player, level.ExternalGameSettings["EnableLatencyMonitor"] );	// Since in lengthy 1 round gametypes, not all players are here for round start!
+		thread LatencyDisplay( player, level.ExternalSettings["EnableLatencyMonitor"] );
 	}
 }
 
@@ -30,28 +32,33 @@ onPlayerSpawned()
 	
 	for(;;)
 	{
-		self waittill("spawned_player");
-		EachPlayerSpawnEvent();
+	self waittill("spawned_player");
+	EachPlayerSpawnEvent();
 	}
 }
 
 EachPlayerSpawnEvent()
 {
-	if ( level.ExternalSettings["SpawnMessage"] == "True" )
-	self iPrintLN(level.ExternalGameSettings["SpawnMessageText"]);
+	if ( level.ExternalSettings["SpawnMessage"] == "true" )
+	{
+	self iPrintLN(level.ExternalSettings["SpawnMessageText"]);
+		}
+		else
+		{
 	}
 }
+
 
 
 
 
 /* Server checks & features based off a _settings file */
 
-// Onscreen Ping Display
+//Onscreen Ping Display
 LatencyDisplay( player, drawPing )
 {
 	player endon ("disconnect");
-		player endon ("death");
+	player endon ("death");
 	
 	// Add text display to the screen
 	player.latencyText = createFontString( "objective", 1.5 );
@@ -64,28 +71,29 @@ LatencyDisplay( player, drawPing )
 	// Set the text to be displayed and check function is "Switched on"
 	while( true )
 	{
-		clientPing = getPlayerPing ( player getEntityNumber());
+		clientPing = getPlayerPing( player getEntityNumber());
 		
 		if ( drawPing )
 		{
-			player.latencyText setText ( PingColor( clientPing ) + clientPing);
+			player.latencyText setText( PingColor( clientPing ) + clientPing);
 		}
-	
+	}
+}
 	
 	// Handle the color of ping display
 PingColor( ping )
 {
-	if ( ping > 150 )
-		return "^3Latency";
 	if ( ping > 250 )
 		return "^1Latency";
+	if ( ping > 150 )
+		return "^3Latency";
 	else
 		return "^2Latency";
 }
 
 // Test new Reload function 
-
-getPlayerReload()
+/*
+PlayerReload()
 {
 	if ( level.ExternalSettings["EnableAmmoRefill"] == "True" )
 	{
@@ -93,7 +101,6 @@ getPlayerReload()
 		self waittill( "reload", "usereload" );
 
 		wait 1;
-		if (self.regen == true) {
 			currentWeapon = self getCurrentWeapon();
 			self giveMaxAmmo( currentWeapon );
 		}
@@ -102,7 +109,7 @@ getPlayerReload()
 	}
 }
 
-getPlayerNade()
+PlayerNade()
 {
 	if ( level.ExternalSettings["EnableEqRefill"] == "True" )
 	{
@@ -114,7 +121,6 @@ getPlayerNade()
 
 		wait 5;
 
-		if (self.regeneq == true) {
 			self setWeaponAmmoClip( currentOffhand, 9999 );
 			self GiveMaxAmmo( currentOffhand );
 		}
@@ -123,7 +129,7 @@ getPlayerNade()
 	}
 }
 
-getPlayerSpecNade()
+PlayerSpecNade()
 {
 	if ( level.ExternalSettings["EnableSpecRefill"] == "True" )
 	{
@@ -135,7 +141,6 @@ getPlayerSpecNade()
 
 		wait 10;
 
-		if (self.regeneqs == true) {
 			self giveWeapon( self.pers["equSpec"] );
 			self giveMaxAmmo( currentOffhand );
 			self setWeaponAmmoClip( currentOffhand, 9999 );
@@ -144,33 +149,5 @@ getPlayerSpecNade()
 		}
 	}
 }
-// Toggle Refill on and off - Client based toggle.
-
-toggleRefill()
-{
-	if ( level.ExternalSettings["EnableRefillToggle"] == "True" )
-	{
-		self notifyOnPlayerCommand ( "Player_Pressed_N", "+actionslot 40" );
-			player waittill ( "Player_Pressed_N" );
-			
-	if (self.regen == true) {
-		self.regen = false;
-		self.regeneq = false;
-		self.regeneqs = false;
-		self iPrintlnBold("Ammo Refill ^1Off");
-
-	} else if (self.regen == false) {
-		self.regen = true;
-		self.regeneq = true;
-		self.regeneqs = true;
-		self iPrintlnBold("Ammo Refill ^2On");
-		}
-		else
-		}
-	}
-}
-
-
-
 
 /* Fuctions based on picked features */
