@@ -10,7 +10,8 @@ Settings file - Change what you wish in here
 	LocalSettings["EnableEqRefill"] - Equipment Refill
 	LocalSettings["EnableSpecRefill"] - Special Equipment Refill
 	LocalSettings["EnableToggleRefill"] - Toggle Global refill
-	LocalSettings["SpawnMessage"] - Spawn message when spawning into server.
+	LocalSettings["SpawnMessage"] - Toggle Spawn Message
+	LocalSettings["SpawnMessageText"] - Spawn message text
 	
 	
 	self.classchange - Midgame class change
@@ -27,8 +28,9 @@ LoadSettings()
 	LocalSettings["EnableEqRefill"]				= true;
 	LocalSettings["EnableSpecRefill"]			= true;
 	LocalSettings["EnableToggleRefill"]			= true;
-	LocalSettings["SpawnMessage"]				= "71st Recon Sniper Mod:" + level.Version;
-	
+	LocalSettings["SpawnMessage"]				= true;
+	LocalSettings["SpawnMessageText"]			= "71st Recon Sniper Mod:" + level.Version;
+		
 	/*
 	self.regen = true;
 	self.regeneq = true;
