@@ -880,7 +880,10 @@ buildWeaponName( baseName, attachment1, attachment2 )
 		weaponName += "_" + attachment;
 	}
 
-	return ( weaponName + "_mp" );
+	if ( !isValidWeapon( weaponName + "_mp" ) )
+		return ( baseName + "_mp" );
+	else
+		return ( weaponName + "_mp" );
 }
 
 
