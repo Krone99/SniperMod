@@ -1,3 +1,21 @@
+/*
+Settings file - Change what you wish in here
+
+	On = True
+	Off = False
+
+	LocalSettings["EnableAmmoRefill"] - Allow ammo refill
+	LocalSettings["EnableDefaultSniper"] - Custom class or default "isnipe" sniper
+	LocalSettings["EnableKillstreaks"] - Custom killstreaks or default
+	LocalSettings["EnableEqRefill"] - Equipment Refill
+	LocalSettings["EnableSpecRefill"] - Special Equipment Refill
+	LocalSettings["EnableToggleRefill"] - Toggle Global refill
+	LocalSettings["SpawnMessage"] - Spawn message when spawning into server.
+	
+	
+	self.classchange - Midgame class change
+
+*/
 LoadSettings()
 {
 	
@@ -11,12 +29,12 @@ LoadSettings()
 	LocalSettings["EnableToggleRefill"]			= true;
 	LocalSettings["SpawnMessage"]				= "71st Recon Sniper Mod:" + level.Version;
 	
-	// Recommended to only change if EnableToggleRefill is False.
-	self.regen = true; // Ammo
-	self.regeneq = true; // Grenades
-	self.regeneqs = true; // Special Grenades
-	
-	// Mid-game class change
+	/*
+	self.regen = true;
+	self.regeneq = true;
+	self.regeneqs = true;
+	*/
+
 	self.classchange = true;
 	
 	return LocalSettings;
