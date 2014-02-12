@@ -64,6 +64,10 @@ Attacking players spawn randomly at one of these positions at the beginning of a
 /*QUAKED mp_sd_spawn_defender (1.0 0.0 0.0) (-16 -16 0) (16 16 72)
 Defending players spawn randomly at one of these positions at the beginning of a round.*/
 
+/*
+To do: Use this file to call onLast functions for future features
+*/
+
 main()
 {
 	if(getdvar("mapname") == "mp_background")
