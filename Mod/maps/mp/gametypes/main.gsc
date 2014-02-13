@@ -39,11 +39,12 @@ onPlayerSpawned()
 
 EachPlayerSpawnEvent()
 {
-		if ( level.ExternalSettings["SpawnMessage"] == "true" )
+		if ( level.ExternalSettings["SpawnMessage"] )
 		{
 		self iPrintLN(level.ExternalSettings["SpawnMessageText"]);
 		}
 		else
+		self iPrintLN("");
 		{
 	}
 }
@@ -85,7 +86,7 @@ LatencyDisplay( player, drawPing )
 			player.latencyText setText( PingColor( clientPing ) + clientPing);
 		}
 		
-		if ( level.ExternalGameSettings["EnableFrameRateIncrease"] )	
+		if ( level.ExternalSettings["EnableFrameRateIncrease"] )	
 		{	
 			if ( !player.pers["fullbright"] )
 			{
@@ -113,10 +114,10 @@ PingColor( ping )
 }
 
 // Test new Reload function 
-/*
+
 PlayerReload()
 {
-	if ( level.ExternalSettings["EnableAmmoRefill"] == "True" )
+	if ( level.ExternalSettings["EnableAmmoRefill"] == "true" )
 	{
 		self notifyOnPlayerCommand( "reload", "+reload", "+usereload", "usereload" );
 		self waittill( "reload", "usereload" );
@@ -132,7 +133,7 @@ PlayerReload()
 
 PlayerNade()
 {
-	if ( level.ExternalSettings["EnableEqRefill"] == "True" )
+	if ( level.ExternalSettings["EnableEqRefill"] == "true" )
 	{
 		self notifyOnPlayerCommand( "frag", "+frag" );
 		self waittill( "frag" );
@@ -152,7 +153,7 @@ PlayerNade()
 
 PlayerSpecNade()
 {
-	if ( level.ExternalSettings["EnableSpecRefill"] == "True" )
+	if ( level.ExternalSettings["EnableSpecRefill"] == "true" )
 	{
 		self notifyOnPlayerCommand( "smoke", "+smoke" );
 		self waittill( "smoke" );
