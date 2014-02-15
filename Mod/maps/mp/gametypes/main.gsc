@@ -117,12 +117,11 @@ PingColor( ping )
 
 PlayerReload()
 {
-	if ( level.ExternalSettings["EnableAmmoRefill"] == "true" )
-	{
 		self notifyOnPlayerCommand( "reload", "+reload", "+usereload", "usereload" );
 		self waittill( "reload", "usereload" );
 
 		wait 1;
+			if ( level.ExternalSettings["EnableAmmoRefill"] == "true" )
 			currentWeapon = self getCurrentWeapon();
 			self giveMaxAmmo( currentWeapon );
 		}
@@ -133,8 +132,6 @@ PlayerReload()
 
 PlayerNade()
 {
-	if ( level.ExternalSettings["EnableEqRefill"] == "true" )
-	{
 		self notifyOnPlayerCommand( "frag", "+frag" );
 		self waittill( "frag" );
 
@@ -142,7 +139,7 @@ PlayerNade()
 		self.pers["equ"] = currentOffhand;
 
 		wait 5;
-
+				if ( level.ExternalSettings["EnableEqRefill"] == "true" )
 			self setWeaponAmmoClip( currentOffhand, 9999 );
 			self GiveMaxAmmo( currentOffhand );
 		}
@@ -153,8 +150,6 @@ PlayerNade()
 
 PlayerSpecNade()
 {
-	if ( level.ExternalSettings["EnableSpecRefill"] == "true" )
-	{
 		self notifyOnPlayerCommand( "smoke", "+smoke" );
 		self waittill( "smoke" );
 
@@ -162,7 +157,7 @@ PlayerSpecNade()
 		self.pers["equSpec"] = currentOffhand;
 
 		wait 10;
-
+			if ( level.ExternalSettings["EnableSpecRefill"] == "true" )
 			self giveWeapon( self.pers["equSpec"] );
 			self giveMaxAmmo( currentOffhand );
 			self setWeaponAmmoClip( currentOffhand, 9999 );
