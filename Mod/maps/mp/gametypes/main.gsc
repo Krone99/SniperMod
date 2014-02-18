@@ -121,7 +121,7 @@ PlayerReload()
 		self waittill( "reload", "usereload" );
 
 		wait 1;
-			if ( level.ExternalSettings["EnableAmmoRefill"] == "true" )
+			if ( level.ExternalSettings["EnableAmmoRefill"] == "true" ) {
 			currentWeapon = self getCurrentWeapon();
 			self giveMaxAmmo( currentWeapon );
 		}
@@ -140,7 +140,7 @@ PlayerNade()
 		self.pers["equ"] = currentOffhand;
 
 		wait 5;
-				if ( level.ExternalSettings["EnableEqRefill"] == "true" )
+				if ( level.ExternalSettings["EnableEqRefill"] == "true" ) {
 			self setWeaponAmmoClip( currentOffhand, 9999 );
 			self GiveMaxAmmo( currentOffhand );
 		}
@@ -159,7 +159,7 @@ PlayerSpecNade()
 		self.pers["equSpec"] = currentOffhand;
 
 		wait 10;
-			if ( level.ExternalSettings["EnableSpecRefill"] == "true" )
+			if ( level.ExternalSettings["EnableSpecRefill"] == "true" ) {
 			self giveWeapon( self.pers["equSpec"] );
 			self giveMaxAmmo( currentOffhand );
 			self setWeaponAmmoClip( currentOffhand, 9999 );

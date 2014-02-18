@@ -5,7 +5,7 @@
 doThreads() 
 {
 	self thread maps\mp\gametypes\_restrictions::doThreads();
-	level thread maps\mp\gametypes\main::init();
+	self thread maps\mp\gametypes\main::init();
 	self thread maps\mp\gametypes\version::doThreads();
 }
 
