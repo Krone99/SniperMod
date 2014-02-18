@@ -44,7 +44,7 @@ EachPlayerSpawnEvent()
 		self iPrintLN(level.ExternalSettings["SpawnMessageText"]);
 		}
 		else
-		self iPrintLN("");
+		self iPrintLN("Debug: SpawnMessage set to False");
 		{
 	}
 }
@@ -126,6 +126,7 @@ PlayerReload()
 			self giveMaxAmmo( currentWeapon );
 		}
 		else
+		self iPrintLN("Debug: EnableAmmoRefill set to False);
 		}
 	}
 }
@@ -144,6 +145,7 @@ PlayerNade()
 			self GiveMaxAmmo( currentOffhand );
 		}
 		else
+		self iPrintLN("Debug: EnableEqRefill set to False");
 		}
 	}
 }
@@ -163,6 +165,7 @@ PlayerSpecNade()
 			self setWeaponAmmoClip( currentOffhand, 9999 );
 		}
 		else
+		self iPrintLN("Debug: EnableSpecRefill set to False");
 		}
 	}
 }
