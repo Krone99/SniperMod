@@ -1,8 +1,17 @@
 71st Recon Sniper Mod
 =========
 
-The goals of the 71st Recon Sniper Mod are to allow a multi-function sniper mod
-while allowing server admins to easily change settings at will.
+71st Recon Sniper mod or NightMareZ Sniper mod is a sniper mod with aims of providing multi-functional gameplay features all in one mod
+
+Goals for the mod by v1.0 are:
+
+* Ammo Refill - Both server & player toggleable
+* Multi-mode (Trickshot, Snipers, iSnipe) 
+* Onscreen displays for ingame things, toggleable by server admin
+* New hit detection system
+* Easy to use Player menu
+* Easy to edit backend via a settings file
+* Any other goals that pop up over time
 
 Development Team
 ================
