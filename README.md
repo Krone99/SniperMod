@@ -17,7 +17,6 @@ Testing Team
 
 Jebus3211 - Lead Tester
 
-
 Current features
 ================
 Ammo Refill.
@@ -25,7 +24,6 @@ Ammo Refill.
 Ping Display.
 
 Toggle refill on/off.
-
 
 Future features
 ================
