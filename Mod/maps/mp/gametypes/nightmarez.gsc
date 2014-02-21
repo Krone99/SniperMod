@@ -20,11 +20,20 @@ main()
 {
 	if(getdvar("mapname") == "mp_background")
 		return;
+		
+		ModVersion = 1;
+		ModVersionMinor = 2;
+		ModStatus = "Pre-Alpha";
+		level.Version = " v" + ModVersion + "." + ModVersionMinor + " " + ModStatus;
+	
+	
 	level.ExternalSettings = maps\mp\Settings::LoadSettings();
 	
-	maps\mp\gametypes\_globallogic::init();
-	maps\mp\gametypes\_callbacksetup::SetupCallbacks();
-	maps\mp\gametypes\_globallogic::SetupCallbacks();
+	
+	
+		maps\mp\gametypes\_globallogic::init();
+		maps\mp\gametypes\_callbacksetup::SetupCallbacks();
+		maps\mp\gametypes\_globallogic::SetupCallbacks();
 	
 		level.objectiveBased = true;
 		
@@ -39,7 +48,7 @@ main()
 		registerHalfTimeDvar( level.gameType, 0, 0, 1 );
 	}
 	
-		level.teamBased = true;
+	level.teamBased = true;
 	level.onPrecacheGameType = ::onPrecacheGameType;
 	level.onStartGameType = ::onStartGameType;
 	level.getSpawnPoint = ::getSpawnPoint;
