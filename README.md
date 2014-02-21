@@ -6,9 +6,17 @@ while allowing server admins to easily change settings at will.
 
 Development Team
 ================
-NightMareZ(Krone99)
+NightMareZ(Krone99) - Lead designer
+
+Relic - Assistant Designer
 
 Note: Only people in 71st will be allowed on the team, contact me on skype.
+
+Testing Team
+================
+
+Jebus3211 - Lead Tester
+
 
 Current features
 ================
