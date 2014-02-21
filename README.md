@@ -28,26 +28,18 @@ Jebus3211 - Lead Tester
 
 Current features
 ================
-Ammo Refill.
-
-Ping Display.
-
-Toggle refill on/off.
+* Ammo Refill.
+* Ping Display.
+* Toggle refill on/off.
 
 Future features
 ================
 
-Settings file allowing server admins to disable/enable 99% of custom features
+* Settings file allowing server admins to disable/enable 99% of custom features
 Improved hit reg.
-
-SV_Cheats detection.
-
-Player menu to toggle on/off player based features.
-
-Mid-game class changing.
-
-Restricted guns & perks.
-
-Replaced default classes to Snipers for new players.
-
-Anything else that comes up over time
+* SV_cheats detection.
+* Player menu to toggle on/off player based features.
+* Mid-game class changing.
+* Restricted guns & perks.
+* Replaced default classes to Snipers for new players.
+* Anything else that comes up over time
