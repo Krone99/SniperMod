@@ -13,6 +13,12 @@ Settings file - Change what you wish in here
 	LocalSettings["SpawnMessage"] - Toggle Spawn Message
 	LocalSettings["SpawnMessageText"] - Spawn message text
 	
+	//  Damage File Shit
+	LocalSettings["SniperDamage"] - Damage Snipers will do.
+	LocalSettings["OtherGuns"] - The damage of all other guns, such as sidearms.
+	0 = No hitmarkers
+	1+ = Hitmarkers
+		
 	
 	self.classchange - Midgame class change
 
@@ -32,6 +38,10 @@ LoadSettings()
 	LocalSettings["EnableToggleRefill"]			= true;
 	LocalSettings["SpawnMessage"]				= true;
 	LocalSettings["SpawnMessageText"]			= "71st Recon Sniper Mod:" + level.Version;
+	
+	//  Damage File Shit
+	LocalSettings["SniperDamage"]				= 150;
+	LocalSettings["OtherGuns"]					= 1;
 		
 	/*
 	self.regen = true;

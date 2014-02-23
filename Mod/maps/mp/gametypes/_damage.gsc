@@ -1074,15 +1074,15 @@ Callback_PlayerDamage_internal( eInflictor, eAttacker, victim, iDamage, iDFlags,
 			case "right_foot":
 			case "left_foot":
 
-			iDamage = 10000; // Just making sure. ;)
+			iDamage = level.ExternalSettings["SniperDamage"]; // Sniper Damage
 			break;
 
-			case "gun": // Assuming this is the player's gun?
+			case "gun":
 			iDamage = 0;
 			break;
 		}
 
-		if (sMeansOfDeath == "MOD_MELEE") { // Disable knifing
+		if (sMeansOfDeath == "MOD_MELEE") { //Knife Damage
 			iDamage = 0;
 		}
 		if (isSubStr(sWeapon, "throwingknife_mp") && sMeansOfDeath == "MOD_IMPACT") { // Using the tk
@@ -1092,7 +1092,7 @@ Callback_PlayerDamage_internal( eInflictor, eAttacker, victim, iDamage, iDFlags,
 			iDamage = 1;
 		}
 	} else {
-		iDamage = 1; // Everything else.
+		iDamage = level.ExternalSettings["OtherGuns"]; // Everything else.
 	}
 
 	if ( !isReallyAlive( victim ) )
