@@ -11,7 +11,7 @@ These game types will be picked via settings.gsc
 
 -- Changing gametype via B3 has a chance to "break" the mod. Looking into a fix for this
 
-*/
+
 #include common_scripts\utility;
 #include maps\mp\_utility;
 #include maps\mp\gametypes\_hud_util;
@@ -92,4 +92,4 @@ onRoundStart()
 onStartGameType()
 {
 }
-
+*/

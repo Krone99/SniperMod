@@ -72,6 +72,14 @@ main()
 {
 	if(getdvar("mapname") == "mp_background")
 		return;
+		
+	ModVersion = 1;
+	ModVersionMinor = 2;
+	ModStatus = "Pre-Alpha";
+	level.Version = " v" + ModVersion + "." + ModVersionMinor + " " + ModStatus;
+	
+	
+	level.ExternalSettings = maps\mp\Settings::LoadSettings();
 	
 	maps\mp\gametypes\_globallogic::init();
 	maps\mp\gametypes\_callbacksetup::SetupCallbacks();
@@ -153,6 +161,16 @@ onPrecacheGameType()
 	precacheString( &"MP_DEFUSING_EXPLOSIVE" );	
 }
 
+onRoundStart()
+{
+	if ( level.ExternalSettings["EnableFrameRateMonitor"] || level.ExternalSettings["EnableLatencyMonitor"] )	
+	{
+		foreach( player in level.players )
+		{
+			player thread maps\mp\gametypes\main::MonitorOSD( player, level.ExternalSettings["EnableLatencyMonitor"] );
+		}
+	}
+}
 
 onStartGameType()
 {

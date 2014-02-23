@@ -28,6 +28,7 @@ LoadSettings()
 	LocalSettings["EnableEqRefill"]				= true;
 	LocalSettings["EnableSpecRefill"]			= true;
 	LocalSettings["EnableLatencyMonitor"]   	= true;
+	LocalSettings["EnableFrameRateMonitor"]		= true;
 	LocalSettings["EnableToggleRefill"]			= true;
 	LocalSettings["SpawnMessage"]				= true;
 	LocalSettings["SpawnMessageText"]			= "71st Recon Sniper Mod:" + level.Version;
