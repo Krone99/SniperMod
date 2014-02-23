@@ -18,9 +18,53 @@ Settings file - Change what you wish in here
 	LocalSettings["OtherGuns"] - The damage of all other guns, such as sidearms.
 	0 = No hitmarkers
 	1+ = Hitmarkers
-		
 	
-	self.classchange - Midgame class change
+	// Class Management System
+	The follow options will be used to decide how the mod will handle classes.
+	
+	Class Options:
+	
+	iSnipe Setup
+	LocalSettings["ClassModeiSnipe"] - Set to True; for iSnipe class system
+	
+	Weapon Loadout:
+	
+	LocalSettings["Sniper"] = Sniper name, etc: Cheytach
+	LocalSettings["Sidearm"] = Etc: M9
+	Attachment Loadout:
+	
+	LocalSettings["SniperAttach1"] = Etc: FMJ
+	LocalSettings["SniperAttach2"] = Etc: Xmags
+	Perks:
+	
+	LocalSettings["PerkSlot1"]
+	LocalSettings["PerkSlot2"]
+	LocalSettings["PerkSlot3"]
+	
+	Custom Class System
+	LocalSettings["ClassModePlayer"] - Player custom classes (normal system)'
+	
+	Other Class Setup
+	Default Assault Class
+	This will control what the Assault default class gives you, to allow new players to have a sniper
+	with Pro perks.
+	
+	Weapon Lodout
+	LocalSettings["DefaultSniper"] = Sniper name, etc: Cheytach
+	LocalSettings["DefaultSidearm"] = Etc: M9
+	
+	Attachment Loadout:
+	LocalSettings["DefaultSniperAttach1"] = Etc: FMJ
+	LocalSettings["DefaultSniperAttach2"] = Etc: Xmags
+	
+	Perks:
+	LocalSettings["DefaultPerkSlot1"]
+	LocalSettings["DefaultPerkSlot2"]
+	LocalSettings["DefaultPerkSlot3"]
+	
+	
+	LocalSettings["ClassChangeMidgame"] - Enable or disable mid game class change.
+	Set to False if you pick iSnipe class
 
 */
 LoadSettings()
