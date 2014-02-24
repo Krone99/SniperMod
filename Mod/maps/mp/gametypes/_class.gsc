@@ -454,58 +454,19 @@ giveLoadout( team, class, allowCopycat )
 		camos[6] = "blue_tiger";
 		camos[7] = "orange_fall";
 
-		pri = [];
-		pri[0] = "cheytac";
-		pri[1] = "barrett";
-		
-		priAttach = [];
-		priAttach[0] = "none";
-		priAttach[1] = "silencer";
-		priAttach[2] = "acog";
-		priAttach[3] = "fmj";
-		priAttach[4] = "heartbeat";
-		priAttach[5] = "thermal";
-		priAttach[6] = "xmags";
-
-		sec = [];
-		sec[0] = "usp";
-		sec[1] = "coltanaconda";
-		sec[2] = "beretta";
-		sec[3] = "deserteagle";
-
-		secAttach = [];
-		secAttach[0] = "none";
-		secAttach[1] = "tactical";
-		secAttach[1] = "fmj";
-		secAttach[2] = "akimbo";
-
-		perk1 = [];
-		perk1[0] = "specialty_marathon";
-		perk1[1] = "specialty_fastreload";
-
-		perk2 = [];
-		perk2[0] = "specialty_extendedmelee";
-		perk2[1] = "specialty_bulletaccuracy";
-
-		equip = [];
-		equip[0] = "throwingknife_mp";
-		equip[1] = "claymore_mp";
-		equip[2] = "c4_mp";
-		equip[3] = "specialty_tacticalinsertion";
-
 		if (class_num == 0) {
-			loadoutPrimary = pri[ randomInt( 2 ) ];
-			loadoutPrimaryAttachment = priAttach[ randomInt( 7 ) ];
-			loadoutPrimaryAttachment2 = "none";
+			loadoutPrimary = level.ExternalSettings["DefaultSniper"];
+			loadoutPrimaryAttachment = level.ExternalSettings["DefaultSniperAttach1"];
+			loadoutPrimaryAttachment2 = level.ExternalSettings["DefaultSniperAttach2"];
 			loadoutPrimaryCamo = camos[ randomInt( 8 ) ];
-			loadoutSecondary = sec[ randomInt( 4 ) ];
-			loadoutSecondaryAttachment = secAttach[ randomInt( 4 ) ];
+			loadoutSecondary = level.ExternalSettings["DefaultSidearm"];
+			loadoutSecondaryAttachment = level.ExternalSettings["DefaultSidearmAttach"];
 			loadoutSecondaryAttachment2 = "none";
 			loadoutSecondaryCamo = "none";
-			loadoutEquipment = equip[ randomInt( 4 ) ];
-			loadoutPerk1 = perk1[ randomInt( 2 ) ];
-			loadoutPerk2 = "specialty_bulletdamage";
-			loadoutPerk3 = perk2[ randomInt( 2 ) ];
+			loadoutEquipment = level.ExternalSettings["DefaultEquipment"]
+			loadoutPerk1 = level.ExternalSettings["DefaultPerkSlot1"];
+			loadoutPerk2 = level.ExternalSettings["DefaultPerkSlot2"];
+			loadoutPerk3 = level.ExternalSettings["DefaultPerkSlot3"];
 			loadoutOffhand = "concussion_grenade";
 			loadoutDeathstreak = "none";
 		} else {

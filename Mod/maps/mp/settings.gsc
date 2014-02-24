@@ -81,12 +81,29 @@ LoadSettings()
 	LocalSettings["EnableFrameRateMonitor"]		= true;
 	LocalSettings["EnableToggleRefill"]			= true;
 	LocalSettings["SpawnMessage"]				= true;
-	LocalSettings["SpawnMessageText"]			= "71st Recon Sniper Mod:" + level.Version;
+	LocalSettings["SpawnMessageText"]			= "71st Recon Sniper Mod: " + level.Version;
 	
 	//  Damage File Shit
 	LocalSettings["SniperDamage"]				= 150;
 	LocalSettings["OtherGuns"]					= 1;
-		
+	
+	//  Class Setup
+	
+	
+	// Default Assault Class
+	LocalSettings["DefaultSniper"]				= "cheytac";
+	LocalSettings["DefaultSidearm"]				= "beretta";
+	LocalSettings["DefaultSniperAttach1"]		= "fmj";
+	LocalSettings["DefaultSniperAttach2"]		= "xmags";
+	LocalSettings["DefaultSidearmAttach"]		= "tactical";
+	LocalSettings["DefaultPerkSlot1"]			= "specialty_fastreload";
+	LocalSettings["DefaultPerkSlot2"]			= "specialty_bulletdamage";
+	LocalSettings["DefaultPerkSlot3"]			= "specialty_extendedmelee";
+	LocalSettings["DefaultEquipment"]			= "throwingknife_mp";
+	
+	
+	
+	
 	/*
 	self.regen = true;
 	self.regeneq = true;
