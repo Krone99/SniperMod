@@ -22,6 +22,7 @@ onPlayerConnect()
 	{
 		level waittill( "connected", player );
 		player thread onPlayerSpawned();
+		player thread handlePlayerRefill
 		thread LatencyDisplay( player, level.ExternalSettings["EnableLatencyMonitor"] );
 	}
 }
@@ -167,6 +168,17 @@ PlayerSpecNade()
 		else
 		self iPrintLN("Debug: EnableSpecRefill set to False");
 		}
+	}
+}
+
+handlePlayerRefill() // Check if Server is allowing Refill. If server allows run separate Refill threads.
+{
+	if ( level.ExternalSettings(["EnableRefill"] == "true" ) {
+	self thread PlayerNade();
+	self thread PlayerSpecNade();
+	self thread PlayerReload();
+	}
+	else
 	}
 }
 
