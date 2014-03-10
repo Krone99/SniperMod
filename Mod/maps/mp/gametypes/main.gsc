@@ -83,7 +83,7 @@ LatencyDisplay( player, drawPing )
 		
 		if ( drawPing )
 		{
-			player.latencyText setText( PingColor( clientPing ) + clientPing + PingMs ( clientPing));
+			player.latencyText setText( PingColor( clientPing ) + clientPing);
 		}
 		
 		if ( level.ExternalSettings["EnableFrameRateIncrease"] )	
@@ -111,15 +111,6 @@ PingColor( ping )
 		return "^3Lat: ";
 	else
 		return "^2Lat: ";
-}
-PingMs ( ping )
-{
-	if ( ping > 250 )
-		return "^1ms";
-	if ( ping > 150 )
-		return "^3ms";
-	else
-		return "^2ms";
 }
 
 
