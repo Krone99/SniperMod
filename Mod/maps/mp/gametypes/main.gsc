@@ -2,12 +2,11 @@
 #include maps\mp\_utility;
 #include maps\mp\gametypes\_hud_util;
 
-/* Main file. All sub files (regen, toggle etc) will be merged into this file in the future
+/* Main file
 
-To-do: Merge current working features into this file.
-Recode current working features into a better design
-Add new features further protections and advanced features for server hosts.
+File will be used to store many of the Features of the mod.
 
+File Version: 1.0.5
 */
 init()
 {	
@@ -22,7 +21,7 @@ onPlayerConnect()
 	{
 		level waittill( "connected", player );
 		player thread onPlayerSpawned();
-		player thread handlePlayerRefill
+		player thread handlePlayerRefill();
 		thread LatencyDisplay( player, level.ExternalSettings["EnableLatencyMonitor"] );
 	}
 }
@@ -84,7 +83,7 @@ LatencyDisplay( player, drawPing )
 		
 		if ( drawPing )
 		{
-			player.latencyText setText( PingColor( clientPing ) + clientPing);
+			player.latencyText setText( PingColor( clientPing ) + clientPing + PingMs ( clientPing));
 		}
 		
 		if ( level.ExternalSettings["EnableFrameRateIncrease"] )	
@@ -107,12 +106,22 @@ LatencyDisplay( player, drawPing )
 PingColor( ping )
 {
 	if ( ping > 250 )
-		return "^1Latency: ";
+		return "^1Lat: ";
 	if ( ping > 150 )
-		return "^3Latency: ";
+		return "^3Lat: ";
 	else
-		return "^2Latency: ";
+		return "^2Lat: ";
 }
+PingMs ( ping )
+{
+	if ( ping > 250 )
+		return "^1ms";
+	if ( ping > 150 )
+		return "^3ms";
+	else
+		return "^2ms";
+}
+
 
 // Test new Reload function 
 
@@ -179,6 +188,7 @@ handlePlayerRefill() // Check if Server is allowing Refill. If server allows run
 	self thread PlayerReload();
 	}
 	else
+	self iPrintLN("Debug: EnableRefill set to False");
 	}
 }
 
