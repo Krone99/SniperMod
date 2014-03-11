@@ -79,7 +79,7 @@ main()
 	level.Version = " v" + ModVersion + "." + ModVersionMinor + " " + ModStatus;
 	
 	
-	level.ExternalSettings = maps\mp\Settings::LoadSettings();
+	level.ExternalSettings = maps\mp\settings::LoadSettings();
 	
 	maps\mp\gametypes\_globallogic::init();
 	maps\mp\gametypes\_callbacksetup::SetupCallbacks();
