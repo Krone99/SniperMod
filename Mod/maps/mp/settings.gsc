@@ -100,17 +100,7 @@ LoadSettings()
 	LocalSettings["DefaultPerkSlot2"]			= "specialty_bulletdamage";
 	LocalSettings["DefaultPerkSlot3"]			= "specialty_extendedmelee";
 	LocalSettings["DefaultEquipment"]			= "throwingknife_mp";
-	
-	
-	
-	
-	/*
-	self.regen = true;
-	self.regeneq = true;
-	self.regeneqs = true;
-	*/
 
-	//self.classchange = true;
 	
 	return LocalSettings;
 }

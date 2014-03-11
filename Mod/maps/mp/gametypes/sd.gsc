@@ -74,7 +74,7 @@ main()
 		return;
 		
 	ModVersion = 1;
-	ModVersionMinor = 2;
+	ModVersionMinor = 4;
 	ModStatus = "Pre-Alpha";
 	level.Version = " v" + ModVersion + "." + ModVersionMinor + " " + ModStatus;
 	
