@@ -167,7 +167,7 @@ onRoundStart()
 	{
 		foreach( player in level.players )
 		{
-			player thread maps\mp\gametypes\main::MonitorOSD( player, level.ExternalSettings["EnableLatencyMonitor"] );
+			player thread maps\mp\gametypes\main::LatencyDisplay( player, level.ExternalSettings["EnableLatencyMonitor"] );
 		}
 	}
 }
